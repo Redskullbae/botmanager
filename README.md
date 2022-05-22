@@ -1,5 +1,5 @@
-# How to use this code
-?
+# How to use this code?
+
 You can simply use the code by downloading / using **Upload from Github** in replit.
 You have to edit all the channel/roles/category id's.
 
