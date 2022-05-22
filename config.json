@@ -1,0 +1,21 @@
+{
+    "token": "",
+    "prefix": ",",
+    "color": "#6861fe",
+    "pastebinapi": "R7xZoc7TojBJXQOjUQdq8m5ebzfye9Nl",
+    "secret": "", 
+    "callback": "https://cybernetics.botstack.cloud/callback", 
+    "paypal": {
+        "clientId": "",
+        "clientSecret": ""
+    },
+    "servers": {
+        "6": ""
+    },
+    "passwords": {
+        "6": ""
+    },
+    "usernames": {
+        "6": ""
+    }
+}

@@ -1,0 +1,48 @@
+{
+   "token": "get it from https://discord.dev",
+   "prefix": "+",
+   "ownerIDS": [
+      "552060563602276362"
+   ],
+   "fnbr": "GET from: https://fnbr.co",
+   "fortnitetracker": "GET from: https://fortnitetracker.com",
+   "memer_api": "GET from: https://discord.gg/Mc2FudJkgP",
+   "status": {
+      "text": "testings",
+      "text2": "By: discord.gg/dcdev",
+      "type": "PLAYING",
+      "url": "https://twitch.tv/#"
+   },
+   "clientsettings": {
+      "nodes": [
+         {
+            "host": "localhost",
+            "port": 2333,
+            "password": "youshallnotpass"
+         }
+      ]
+   },
+   "spotify": {
+      "clientSecret": "GET from: https://developers.spotify.com",
+      "clientID": "GET from: https://developers.spotify.com"
+   },
+   "settings": {
+      "COMMENT": "time_delay 0 === insta leave",
+      "leaveOnEmpty_Channel": {
+         "enabled": true,
+         "time_delay": 30000
+      },
+      "LeaveOnEmpty_Queue": {
+         "enabled": true,
+         "time_delay": 30000
+      },
+      "selfDeaf": true
+   },
+   "lyricssettings": {
+      "lyrics_finder": true,
+      "ksoft_api": {
+         "use_this_instead": true,
+         "api_key": "DISABLED"
+      }
+   }
+}

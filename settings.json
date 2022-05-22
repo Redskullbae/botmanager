@@ -1,0 +1,92 @@
+{
+    "Roles": {
+        "FounderId": "952581433162096661",
+        "OwnerRoleId": "952581434185510953",
+        "CoOwnerRoleId": "952581435150204960",
+        "ChiefHumanResources": "952581435947110532",
+        "HumanResources": "952581437259923506",
+        "AdminRoleId": "952581440334356530",
+        "ModRoleId": "952581442200801290",
+        "ChiefSupporterRoleId": "952581444054712341",
+        "ChiefBotCreatorRoleId": "952581445120053309",
+        "BotCreatorRoleId": "952581445950525440",
+        "SupporterRoleId": "952581446340575243", 
+        "NewSupporterRoleId": "952581447837945866"
+    },
+    "ticketsystem": [
+        {
+            "value": "General Help",
+            "description": "Get help for anything you need",
+            "emoji": "❓",
+            "type": "GENERAL"
+        },
+        {
+            "value": "Bot Help",
+            "description": "Get help for your SHOP-BOT",
+            "emoji": "🤖",
+            "type": "HELP"
+        },
+
+
+        {
+            "value": "Staff Application",
+            "description": "Apply as a Staff for Cybernetics Development",
+            "emoji": "<:staff:955479654028935248>",
+            "type": "TEAMAPPLY"
+        },
+        {
+            "value": "Partner Application",
+            "description": "Apply for a partnership with Cybernetics Development",
+            "emoji": "<:partner:946846491971043338>",
+            "type": "PARTNERAPPLY"
+        }
+    ],
+    "ordersystem": [    
+        {
+            "value": "System Bot",
+            "description": "8 Invites ・ 1€/30 Days ・ 4€/Year",
+            "emoji": "🤖",
+            "type": "SYSTEMBOTS"
+        },
+        {
+            "value": "Music Bot",
+            "description": "7 Invites ・ 1€/60 Days ・ 3€/Year",
+            "emoji": "🎵",
+            "type": "MusicBots"
+        },
+        {
+            "value": "24/7 Music Bot",
+            "description": "5 Invites • 1$/60 Days • 3$/Year",
+            "emoji": "🎙️",
+            "type": "24_7_MUSIC_BOT"
+        },
+        {
+            "value": "Waitingroom Bot",
+            "description": "3 Invites ・ 1€/100 Days ・ 2€/Year",
+            "emoji": "🕓",
+            "type": "WAITINGROOMBOT"
+        },
+
+        {
+            "value": "Mod Mail Bot",
+            "description": "3 Invites ・ 1€/100 Days ・ 2€/Year",
+            "emoji": "📨",
+            "type": "MODMAILBOT"
+        }
+    ],
+    "createbot": [
+        {
+            "value": "System Bot",
+            "description": "6 Invites ・ 1€/30 Days ・ 4€/Year",
+            "emoji": "🤖",
+            "bottype": "SYSTEMBOTS"
+        },
+
+        {
+            "value": "Music Bot",
+            "description": "7 Invites ・ 1€/60 Days ・ 3€/Year",
+            "emoji": "🎵",
+            "bottype": "MusicBots"
+        }    
+    ]
+}

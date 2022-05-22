@@ -1,0 +1,190 @@
+<%- include('header'); -%>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <!--Meta Tags-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
+        <link href="https://pro.fontawesome.com/releases/v5.13.1/css/all.css" rel="stylesheet">
+        <link rel="stylesheet" href="/index.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <link rel="stylesheet" href="/sweetalert.css">
+        <link rel="stylesheet" href="/rfm.css">
+        <title>
+            Cybernetics | Dashboard
+        </title>
+    </head>
+
+
+    <body>
+        <!--MAIN BODY-->
+        <br><br><br><br>
+        <section>
+            <div class="form-body">
+            <div id="wrapper">
+
+
+
+            <div class="frame ajax">
+                <div class="inner">
+                    <div class="category">
+                        <div class="loading" style="display: none;">
+                            <img src="https://www.reyfm.de/assets/img/loading.svg">
+                        </div>
+                        <div class="init">
+                            <div class="category-item" style="display: none;">
+                                <h2 class="big upper">Category</h2>
+                                <div class="contributors">
+                                    <div class="item shadow">
+                                        <div class="inner">
+                                            <h1 class="name upper">Name</h1>
+                                            <p class="role upper">Role</p>
+                                            <div class="avatar">
+                                                <span></span>
+                                                <img src="https://cdn.reyfm.de/img/nocover_500x500_blurred.jpg" alt="AVATAR">
+                                            </div>
+                                            <img class="background" src="https://cdn.reyfm.de/img/nocover_500x500_blurred.jpg" alt="BACKGROUND">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><div class="form-body">
+
+                                <div class="contributors">
+                                    <div class="item shadow" style="display: none;">
+
+                                    </div><div class="item shadow team" style="display: block;">
+                                        <div class="inner">
+                                            <h1 class="name upper"><%= resp2.data.user.username %></h1>
+                                            <p class="role upper">Chief Executive Officer</p>
+                                            
+                                            <div class="avatar">
+                                                <img src= 'https://cdn.discordapp.com/avatars/<%= resp2.data.user.id %>/<%= resp2.data.user.avatar %>' alt="AVATAR">
+                                                <% if(resp2.data.user.status === "online"){ %>
+                                                    <span class="online"></span>
+                                                    <%}%>
+                                                    <% if(resp2.data.user.status === "idle"){ %>
+                                                        <span class="idle"></span>
+                                                        <%}%>
+                                                        <% if(resp2.data.user.status === "dnd"){ %>
+                                                            <span class="do_not_disturb"></span>
+                                                            <%}%>
+                                                            <% if(resp2.data.user.status === "offline"){ %>
+                                                                <span class="offline"></span>
+                                                                <%}%>
+                                            </div>
+
+                                            <img class="background" src="https://cdn.discordapp.com/avatars/<%= resp2.data.user.id %>/<%= resp2.data.user.avatar %>" alt="BACKGROUND">
+                                        </div>
+                                        
+                                    </div><div class="item shadow team" style="display: block;">
+                                        <div class="inner">
+                                            <h1 class="name upper">Stryker</h1>
+                                            <p class="role upper">Chief Operating Officer</p>
+                                            <div class="avatar">
+                                                <img src="https://cdn.discordapp.com/avatars/467929680645849100/7cb8e6026cbe3a1494d4d91debced497.png" alt="AVATAR">
+                                            </div>
+                                            <img class="background" src="https://cdn.discordapp.com/avatars/467929680645849100/7cb8e6026cbe3a1494d4d91debced497.png" alt="BACKGROUND">
+                                        </div>
+                                    </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+            <script>
+                var contributors = {
+                    interval: null,
+                    api: {
+                        url: 'https://api.reyfm.de/team'
+                    },
+                    init() {
+                        window.addEventListener('sitechanged', function () {
+                            this.removeEventListener('sitechanged', arguments.callee, false);
+                            rfm.stats.unload();
+                        });
+                        this.interval = setInterval(function(){
+                            contributors.update();
+                        }, 15000);
+                        contributors.update();
+                    },
+                    update: function () {
+                        fetch(contributors.api.url)
+                            .then(response => response.json())
+                            .then(data => {
+                                while ($('.category .category-item').length > 1) {
+                                    $('.category .category-item:last').remove();
+                                }
+                                Object.keys(data).forEach(category => {
+                                    let c = $('.category .category-item:first').css({display: 'none'}).clone();
+                                    $(c).find('h2').text(category);
+            
+                                    $('.category .category-item:last').after(c);
+                                    $('.category .category-item:last').css({display: 'block'});
+            
+            
+            
+                                    Object.keys(data[category]).forEach(contributor => {
+                                        contributor = data[category][contributor];
+            
+                                        let e = $(c).find('.contributors .item:first').css({display: 'none'}).clone();
+            
+                                        $(e).click(function() {
+                                            navigator.clipboard.writeText(contributor.name);
+                                        });
+            
+                                        $(e).addClass(category);
+                                        $(e).find('.avatar span').addClass(contributor.status.toLowerCase());
+            
+                                        $(e).find('.name').text(contributor.name.substr(0, contributor.name.length-5));
+                                        $(e).find('.role').text(contributor.group || category);
+            
+                                        $(e).find('.avatar img').attr("src", contributor.avatar);
+                                        $(e).find('.background').attr("src", contributor.avatar);
+            
+                                        $('.contributors  .item:last').after(e);
+                                        $('.contributors  .item:last').css({display: 'block'});
+                                    });
+                                });
+                                //finish loading animation
+                                $('.loading').fadeOut('fast', function () {
+                                    $('.init').fadeIn('fast');
+                                });
+                            });
+                    },
+                    unload: function () {
+                        clearInterval(this.interval);
+                        this.interval = null;
+                    }
+                }
+                $(document).ready(contributors.init);
+            </script>
+            <style>
+                .ajax .loading {
+                    height: 200px;
+                }
+                #content {
+                    top: 75px;
+                    position: relative;
+                }
+            </style>
+
+                
+            </div></div>
+        </section>
+
+
+    </body>
+
+    </html>
