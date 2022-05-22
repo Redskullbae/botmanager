@@ -4,7 +4,7 @@ You can simply use the code by downloading / using **Upload from Github** in rep
 You have to edit all the channel/roles/category id's.
 
 # Can I contribute?
-Yes you can contribute by joining our [Discord Server](https://discord.com/invite/hHjs8wzPds) and giving a start to the repo.
+Yes you can contribute by joining our [Discord Server](https://discord.com/invite/hHjs8wzPds) and giving a star to the repo.
 If using this code, we should not forget milrato as this is coded by them.
 
 # What if we get errors / bugs?
